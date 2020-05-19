@@ -7,7 +7,7 @@ def selection_sort(A):
         minIndex = i
         for j in range(i+1, len(A)):
             if A[j] < A[minIndex]:
-                A[i], A[minIndex] = A[minIndex], A[i]
+                A[j], A[minIndex] = A[minIndex], A[j]
     return A
 
 A = [6, 2, 4, 6, 7, 8, 98, 12, 5]
