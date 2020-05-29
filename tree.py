@@ -30,17 +30,42 @@ class BST:
         self.root = None
     def insert(self, data):
         #TO DO
-        pass
+        if self.root is None:
+            self.root = Node(data)
+        else:
+            self._insert(data, self.root)
     def _insert(self, data, cur_node):
         #TO Do
-        pass
+        if data < cur_node.data:
+            if cur_node.left is None:
+                cur_node.left = Node(data)
+            else:
+                self._insert(data, cur_node.left)
+        elif data > cur_node.data:
+            if cur_node.right is None:
+                cur_node.right = Node(data)
+            else:
+                self._insert(data, cur_node.right)
     def find(self, data):
         #To Do
-        pass
+        if self.root:
+            is_found = self._find(data, self.root)
+            if is_found:
+                return True
+            else:
+                return False
+        else:
+            return False
     def _find(self, data, cur_node):
         #To do
-        pass
+        if data > cur_node.data and cur_node.right:
+            return self._find(data, cur_node.right)
+        elif data < cur_node.data and cur_node.left:
+            return self._find(data, cur_node.left)
+        if data == cur_node.data:
+            return True
 
 bst = BST()
-bst.insert()
-print(bst.find())
+for n in range(1, 500):
+    bst.insert(n)
+print(bst.find(0))
