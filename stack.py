@@ -3,6 +3,11 @@ push
 pop
 is_empty
 """
+def length(item):
+    l = 0
+    for _ in item:
+        l += 1
+    return l
 class Stack():
     def __init__(self):
         self.items = []
@@ -20,7 +25,17 @@ class Stack():
     
     def get_stack(self):
         return self.items
-
+class list():
+    def __init__(self):
+        self.items = []
+    def append(self, item):
+        self.items[length(self.items) + 1] = item
+        return self.items
+    def remove(self, item):
+        self.items[self.items.index(item)] = ''
+        return self.items
+    def index(self, item):
+        return
 s = Stack()
 s.push("1")
 s.push("2")
