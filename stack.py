@@ -35,7 +35,12 @@ class list():
         self.items[self.items.index(item)] = ''
         return self.items
     def index(self, item):
-        return
+        index = 0
+        for each in self.items:
+            index += 1
+            if each == item:
+                break
+        return index
 s = Stack()
 s.push("1")
 s.push("2")
