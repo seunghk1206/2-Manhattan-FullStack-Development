@@ -1,4 +1,5 @@
-
+import time
+start_time = time.time()
 def binary_search(sequence, item):
     begin_index = 0
     end_index = len(sequence)-1
@@ -12,8 +13,10 @@ def binary_search(sequence, item):
         elif item > midpoint_value:
             begin_index = midpoint + 1
     return None
-sequence_a = [2, 4, 5, 6, 7, 8, 9]
+sequence_a = [each for each in range(10000)]
 
-item_a = 9
+item_a = 9000
 
 print(binary_search(sequence_a, item_a))
+
+print("--- %s seconds ---" % (time.time() - start_time))
